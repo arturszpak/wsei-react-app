@@ -1,0 +1,14 @@
+.MainPage {
+  font-family: sans-serif;
+  &__header {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
+  &__workspaces {
+    &__heading {
+      color: rgb(32, 32, 32);
+      padding: 1rem;
+    }
+  }
+}

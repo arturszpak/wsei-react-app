@@ -1,0 +1,47 @@
+.article {
+  display: flex;
+  min-height: 50px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+
+  &__image {
+    width: 75px;
+    height: 75px;
+  }
+
+  &__publisherAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+  }
+
+  &__publisherAvatar img {
+    border-radius: 50%;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__paragraph {
+    margin-bottom: 0.2rem;
+    padding: 0.5rem;
+  }
+
+  &__date {
+    color: rgb(143, 143, 143);
+  }
+
+  & span {
+    display: inline-block;
+    padding: 0 0.3rem;
+  }
+}

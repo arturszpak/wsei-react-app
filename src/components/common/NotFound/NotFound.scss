@@ -1,0 +1,14 @@
+.page {
+  width: 100%;
+
+  &__header {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  &__paragraph {
+    text-align: center;
+  }
+}

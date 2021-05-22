@@ -1,0 +1,23 @@
+.publications {
+  min-width: 50vw;
+  min-height: 250px;
+  background-color: rgb(252, 252, 252);
+  margin: 0 1rem;
+  font-family: sans-serif;
+  padding-left: 1rem;
+
+  &__header {
+    padding: 1rem 1rem 0rem 0.5rem;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  &__linkWrapper {
+    padding: 1rem;
+  }
+  &__link {
+    color: rgb(9, 136, 209);
+    text-decoration: none;
+  }
+}

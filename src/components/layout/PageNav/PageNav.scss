@@ -1,0 +1,51 @@
+$input-border-color: rgb(163, 163, 163);
+
+@mixin flex($justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+.mainNav {
+  @include flex(space-between);
+  font-family: "Montserrat", sans-serif;
+  padding: 0 1rem;
+  min-height: 50px;
+  width: 100%;
+  box-shadow: 0rem 0.1rem 3rem #bdbdbd;
+  background: white;
+
+  &__logoContainer {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+    position: absolute;
+  }
+
+  &__dropdown {
+    width: 200px;
+    margin-left: 4rem;
+  }
+
+  &__select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem;
+    border: 1px solid black;
+    border-radius: 3px;
+
+    & span {
+      font-size: 0.8rem;
+    }
+  }
+  &__menu-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 1rem;
+  }
+  &__arrow-down {
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,126 @@
+.expandedMenu{
+    background: white;
+    z-index: 99;
+    position: absolute;
+    width: 200px;
+    border: 1px solid black;
+    border-top: none;
+    border-radius: 3px;
+
+    &__menuList{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        list-style-type: none;
+    
+        &__element{
+            color: black;
+            font-size: .8rem;
+            width: 100%;
+
+            &__link{
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 0 .5rem 0 .7rem;
+                width: 100%;
+            }
+
+            & img{
+                width: 18px;
+                height: 18px;
+            }
+            
+            &__name{
+                padding: .5rem;
+                margin-left: .3rem;
+                color: black;
+            }
+        }
+
+        &__element:hover{
+            background: rgb(235, 235, 235);
+        }
+    }
+    
+    &__filter{
+        width: 90%;
+        margin: .7rem auto;
+       
+
+        &__input{
+            border: 1px solid rgb(105, 105, 105);
+            border-radius: 3px;
+            color: rgb(105, 105, 105);
+            outline: none;
+            padding: .2rem;
+        }
+    }
+
+    &__header{
+        color: rgb(78, 78, 78);
+        padding: .3rem;
+        font-size: 0.8rem;
+    }
+
+
+    &__account{
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        width: 100%;
+
+        &__avatar-wrapper{
+            width: 54px;
+            height: 54px;
+            padding: .2rem 0 0 .5rem;
+
+            & img{
+                border-radius: 50%;
+            }
+        }
+
+        &__name{
+            font-size: .75rem;
+            margin: 0 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        &__link{
+            width: 100%;
+            color: rgb(29, 97, 185);
+            text-decoration: none;
+            font-size: .7rem;
+            font-weight: 700;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+
+    &__logout{
+        padding: .3rem 0;
+        width: 100%;
+
+        &__text{
+            font-size: .8rem;
+            margin-left: .5rem;
+
+        }
+
+        &__link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            text-decoration: none;
+        }
+
+        &:hover{
+            background-color: rgb(204, 204, 204);
+        }
+    }
+}
+
