@@ -1,0 +1,107 @@
+@import "./../../../scss/mixins/flex.scss";
+$blue: rgb(19, 19, 155);
+
+* {
+  font-family: sans-serif;
+}
+
+.entities {
+  font-family: sans-serif;
+
+  &__headerWrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+    @include flex(space-between, row);
+  }
+
+  &__header {
+    width: 100px;
+    @include flex(space-between, row);
+  }
+
+  &__headerTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgb(58, 58, 58);
+  }
+
+  &__wrapper {
+    padding: 1rem;
+    width: 100%;
+    background-color: white;
+    @include flex(flex-start, column);
+    align-items: flex-start;
+  }
+  &__displayTypes {
+    @include flex(space-between, row);
+    width: 150px;
+  }
+}
+
+.displayBtn {
+  font-size: 0.65rem;
+  width: 65px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  @include flex(space-between, row);
+  padding: 0.5rem;
+  color: $blue;
+  background: rgb(171, 196, 241);
+}
+
+.controls {
+  @include flex(space-between, row);
+  width: 100%;
+
+  &__general {
+    @include flex(flex-end, row);
+    align-items: center;
+  }
+  &__general > div {
+    margin: 0 1rem;
+  }
+
+  &__inputFilter {
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 5px;
+    width: 200px;
+    padding: 0.3rem 0.7rem;
+    display: block;
+    outline: none;
+  }
+
+  &__followed {
+    font-size: 0.8rem;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    width: 110px;
+    padding: 0.5rem 0.4rem;
+    @include flex(center, row);
+    color: $blue;
+    cursor: pointer;
+    margin: 0 1rem;
+  }
+  &__followed .fas {
+    padding: 0 0.3rem;
+  }
+
+  &__additional {
+    @include flex(space-between, row);
+  }
+}
+
+.entitiesContainer {
+  @include flex(flex-start, row);
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  background: transparent;
+  padding: 0.2rem 0.3rem;
+  color: rgb(66, 66, 66);
+  border: none;
+  cursor: pointer;
+}

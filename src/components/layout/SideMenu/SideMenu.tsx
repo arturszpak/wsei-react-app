@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './SideMenu.scss';
 
 
@@ -42,13 +43,14 @@ class SideMenu extends Component<any, S> {
             <div>
                 <div className="userProfile">
 
-                <div className="userProfile__credentials">
+                <Link to={`/Profile`} className="userProfile__credentials">
                     <div className="userProfile__credentials__avatar">
                         <img src={userData?.userAvatar} alt="user-avatar"/>
                     </div>
                     <h2 className="userProfile__credentials__name">{userData?.userName || "John Doe"}</h2>
                     <p className="userProfile__credentials__job">{userData?.userJobTitle || "Job title"} - {userData?.userCompany || "Company"}</p>
-                </div>
+                </Link>
+
 
                 <div className="userProfile__menu">
 
@@ -74,24 +76,24 @@ class SideMenu extends Component<any, S> {
                 </div>
                 </div>
                 <div className="userProfile__outer-menu">
-                <div className="userProfile__outer-menu__wrapper">
-                    <div className="userProfile__outer-menu__wrapper__imgContainer">
-                        <img src="./assets/images/icons/publications.png" alt="my-network-icon"/>
+                    <div className="userProfile__outer-menu__wrapper">
+                        <div className="userProfile__outer-menu__wrapper__imgContainer">
+                            <img src="./assets/images/icons/publications.png" alt="my-network-icon"/>
+                        </div>
+                        <p className="userProfile__outer-menu__wrapper__name">Publications</p>
                     </div>
-                    <p className="userProfile__outer-menu__wrapper__name">Publications</p>
-                </div>
-                <div className="userProfile__outer-menu__wrapper">
-                    <div className="userProfile__outer-menu__wrapper__imgContainer">
-                        <img src="./assets/images/icons/ecosystem.png" alt="my-network-icon"/>
+                    <div className="userProfile__outer-menu__wrapper">
+                        <div className="userProfile__outer-menu__wrapper__imgContainer">
+                            <img src="./assets/images/icons/ecosystem.png" alt="my-network-icon"/>
+                        </div>
+                        <p className="userProfile__outer-menu__wrapper__name">Ecosystem</p>
                     </div>
-                    <p className="userProfile__outer-menu__wrapper__name">Ecosystem</p>
-                </div>
-                <div className="userProfile__outer-menu__wrapper">
-                    <div className="userProfile__outer-menu__wrapper__imgContainer">
-                        <img src="./assets/images/icons/entities2.png" alt="my-network-icon"/>
-                    </div>
-                    <p className="userProfile__outer-menu__wrapper__name">Entities</p>
-                </div>
+                    <Link to={`/Entities`} className="userProfile__outer-menu__wrapper">
+                            <div className="userProfile__outer-menu__wrapper__imgContainer">
+                                <img src="./assets/images/icons/entities2.png" alt="my-network-icon"/>
+                            </div>
+                            <p className="userProfile__outer-menu__wrapper__name">Entities</p>
+                    </Link>
                 </div>
             </div>
             

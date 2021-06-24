@@ -1,0 +1,209 @@
+@import "./../../../scss/mixins/flex.scss";
+$textGray: rgb(165, 164, 164);
+$textLightBlue: rgb(84, 157, 206);
+$backgroundLightBlue: rgb(208, 238, 240);
+
+.profile {
+  width: 85vw;
+  background-color: rgb(248, 248, 248);
+  font-family: sans-serif;
+
+  &__actionBtns {
+    @include flex(flex-end, row);
+    padding: 1rem;
+    padding-left: 5rem;
+  }
+  &__actionBtn {
+    margin: 0 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__userGeneralInfo {
+    @include flex(flex-start, row);
+    padding: 1rem;
+    position: relative;
+  }
+
+  &__userInfo,
+  &__userContact {
+    @include flex(flex-start, column);
+  }
+
+  &__userAvatar,
+  &__userInfo,
+  &__userContact {
+    margin: 1rem 2rem;
+  }
+
+  &__userInfo__city,
+  &__userInfo__position {
+    color: rgb(121, 121, 121);
+  }
+
+  &__userSkills {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  &__userSkillWrapper,
+  &__userInformationWrapper {
+    padding: 0.4rem;
+  }
+
+  &__skillHeader,
+  &__userInformationHeader {
+    color: $textGray;
+    padding: 1rem 0;
+  }
+
+  &__skillName {
+    color: $textLightBlue;
+    background: $backgroundLightBlue;
+    padding: 0.4rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+  }
+
+  &__skills,
+  &__userInformation {
+    @include flex(flex-start, row);
+  }
+
+  &__userInformationWrapper {
+    margin-bottom: 1rem;
+  }
+
+  &__userInformationContent {
+    color: black;
+    padding: 0.4rem;
+    margin-right: 1rem;
+  }
+  &__userInformationAttachment {
+    padding: 1rem;
+    color: black;
+    background: rgb(226, 226, 226);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  &__panelInformation {
+    padding: 1rem;
+    margin: 1rem 0;
+    position: relative;
+  }
+
+  &__panelInformationHeader,
+  &__proposalsHeader,
+  &__internalReviewsHeader,
+  &__feesHeader {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 700;
+  }
+
+  &__correspondantInformationWrapper {
+    @include flex(flex-start, column);
+    align-items: flex-start;
+  }
+  &__correspondantInformation {
+    width: 60%;
+    @include flex(space-evenly, row);
+    padding: 1rem 0;
+  }
+
+  &__correspondantAvatar {
+    max-width: 20px;
+    max-height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  &__correspondantName {
+    font-weight: 700;
+  }
+  &__correspondantActionBtn {
+    margin-left: 1.5rem;
+    color: $textGray;
+  }
+
+  &__proposals,
+  &__internalReviews,
+  &__fees {
+    padding: 1rem;
+  }
+
+  &__proposals {
+    position: relative;
+  }
+
+  &__proposalsDataTable,
+  &__internalReviewsDataTable,
+  &__feesDataTable {
+    margin: 1rem;
+  }
+  &__proposalsTableColumn,
+  &__internalReviewsTableColumn,
+  &__feesTableColumn {
+    width: 50px;
+    font-weight: 700;
+  }
+  &__proposalsTableColumn th,
+  &__internalReviewsTableColumn th,
+  &__feesTableColumn th {
+    padding: 8px;
+    width: 150px;
+    text-align: left;
+  }
+  &__proposalsTableColumn tr,
+  &__internalReviewsTableColumn tr,
+  &__feesTableColumn tr {
+    @include flex(flex-start, row);
+    align-items: flex-start;
+  }
+
+  &__proposalsTableColumn td,
+  &__internalReviewsTableColumn td,
+  &__feesTableColumn td {
+    padding: 8px;
+    font-weight: 500;
+    width: 150px;
+  }
+  &__seeMoreProposals,
+  &__seeMoreReviews {
+    color: rgb(73, 123, 231);
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    font-size: 1.4rem;
+    float: right;
+  }
+}
+.far,
+.fas {
+  margin-right: 0.7rem;
+}
+
+.editBtn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px 20px 0 0;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+
+  &:hover {
+    background: rgb(206, 206, 206);
+  }
+}
+
+.horizontalLine {
+  border: 1px solid rgb(228, 228, 228);
+  margin: 0 2rem;
+}
+
+.nodisplay {
+  display: none;
+}

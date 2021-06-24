@@ -1,4 +1,5 @@
 import React, {FC, useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import './ExpandedMenu.scss';
 import {ExpandedMenuItem} from './ExpandedMenuItem/ExpandedMenuItem';
 
@@ -17,11 +18,11 @@ export const ExpandedMenu: FC = () =>{
     ]; 
 
     const workspaceMenu: any[] = [
-        { name: "Client contract", iconName: "house2" },
-        { name: "Supplier contract", iconName: "publications" },
+        { name: "Client Contract", iconName: "house2" },
+        { name: "Supplier Contract", iconName: "publications" },
         { name: "Corporate", iconName: "people" },
         { name: "Group Norms", iconName: "entities2" },
-        { name: "Real Estate contracts", iconName: "administration" }
+        { name: "Real Estate Contracts", iconName: "administration" }
     ];
 
     const [publicationsElements, setPublicationsElements] = useState([]); 
@@ -92,17 +93,18 @@ export const ExpandedMenu: FC = () =>{
                             <span className="expandedMenu__account__name">
                                 Hilberta Zuckerberg
                             </span>
-                            <a className="expandedMenu__account__link" href="#">See profile</a>
+                            <Link to={`/Profile`} className="expandedMenu__account__link">
+                                See Profile
+                            </Link>
                         </div>
                     </div>
                     <ExpandedMenuItem name="Privacy" iconName="privacy" />
                     <ExpandedMenuItem name="Settings" iconName="settings" />
                     <div className="expandedMenu__logout">
-                        <a href="#" className="expandedMenu__logout__link">
+                        <Link to={`/Logout`} className="expandedMenu__logout__link">
                             <img src="./assets/images/icons/logout.png" alt="logout" className="expandedMenu__logout__img"/>
                             <span className="expandedMenu__logout__text">Logout</span>
-                        </a>
-                        
+                        </Link>
                     </div>
                 </ul>
             </div>

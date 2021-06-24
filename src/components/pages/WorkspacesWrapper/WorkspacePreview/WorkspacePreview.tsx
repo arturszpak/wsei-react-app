@@ -1,8 +1,8 @@
 import './WorkspacePreview.scss';
 
-const Workspace = () => {
+const WorkspacePreview = () => {
     return(
-        <div className="workspace">
+        <div className="workspace sliderImg">
             <div className="workspace__image">
                 <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/zoom-background-green-screen-smoke-orange-design-template-5d406471b060c66f32babe000ee69d31_screen.jpg?ts=1617600726" alt="img" />
             </div>
@@ -42,4 +42,4 @@ const Workspace = () => {
     );
 };
 
-export default Workspace;
+export default WorkspacePreview;

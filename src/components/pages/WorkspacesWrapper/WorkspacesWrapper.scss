@@ -1,5 +1,12 @@
 .workspacesWrapper {
-  display: flex;
-  align-items: center;
-  // min-height: 250px;
+  position: relative;
+  max-width: 78vw;
+
+  &__heading {
+    color: rgb(71, 71, 71);
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    font-size: larger;
+    font-weight: 700;
+  }
 }

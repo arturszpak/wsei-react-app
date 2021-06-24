@@ -1,0 +1,35 @@
+@import "./../../../../scss/mixins/flex.scss";
+$blue: rgb(19, 19, 155);
+
+.entity {
+  min-width: 100px;
+  padding: 0.3rem;
+  @include flex(space-between, row);
+  border: 1px solid rgba(192, 192, 192, 0.425);
+  border-radius: 3px;
+  margin: 0.5rem;
+
+  &__imgContainer {
+    width: 90px;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__content {
+    padding: 0.5rem 0;
+  }
+
+  &__title {
+    color: $blue;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  &__desc {
+    color: rgb(148, 148, 148);
+    font-size: 0.8rem;
+  }
+}

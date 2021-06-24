@@ -1,0 +1,21 @@
+.resumes {
+  padding: 1rem;
+  min-height: 20vh;
+  margin-right: 10rem;
+
+  &__filters {
+    width: 30%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 0.5rem;
+    color: rgb(77, 77, 77);
+  }
+}

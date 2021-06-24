@@ -1,13 +1,31 @@
 import './WorkspacesWrapper.scss';
-import Workspace from './WorkspacePreview/WorkspacePreview';
+import WorkspacePreview from './WorkspacePreview/WorkspacePreview';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
 
 const WorkspacesWrapper = () => {
+
+
+
     return(
         <div className="workspacesWrapper">
-            <Workspace />
-            <Workspace />
-            <Workspace />
-        </div>
+            <h2 className="workspacesWrapper__heading">Workspaces</h2>
+            
+            <Swiper slidesPerView={3}>
+                <SwiperSlide><WorkspacePreview /></SwiperSlide>
+                <SwiperSlide><WorkspacePreview /></SwiperSlide>
+                <SwiperSlide><WorkspacePreview /></SwiperSlide>
+                <SwiperSlide><WorkspacePreview /></SwiperSlide>
+                <SwiperSlide><WorkspacePreview /></SwiperSlide>
+                <SwiperSlide><WorkspacePreview /></SwiperSlide>
+            </Swiper>
+                {/* <div className="workspacesWrapper__sliderInner">
+                    <WorkspacePreview />
+                    <WorkspacePreview />
+                    <WorkspacePreview />
+                    
+                </div> */}
+            </div>
     );
 };
 
