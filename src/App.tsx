@@ -11,7 +11,9 @@ import { GetUsers } from './redux/actions/usersActions';
 import { GetComments } from './redux/actions/commentsActions';
 import { GetPhotos } from './redux/actions/photosActions';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import {useEffect} from 'react';
+
+import { GetPosts } from './redux/actions/postsActions';
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
     dispatch(GetUsers());
     dispatch(GetComments());
     dispatch(GetPhotos());
+    dispatch(GetPosts())
 }, [])
 
   return (
@@ -39,11 +42,11 @@ function App() {
             <Route path="/Entities" exact>
               <Entities />
             </Route>
-            <Route path="/Workspace" exact>
-              <Workspace />
-            </Route>
             <Route path="/Profile" exact>
               <Profile />
+            </Route>
+            <Route path="/Workspace">
+              <Workspace/>
             </Route>
             <Route path="/*" exact>
               <NotFound />

@@ -1,4 +1,4 @@
-import React, {FC, useState, useEffect} from 'react';
+import {FC, useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PhotosContent } from '../../../redux/actions/photosActionsTypes';
@@ -8,6 +8,27 @@ import './ExpandedMenu.scss';
 import {ExpandedMenuItem} from './ExpandedMenuItem/ExpandedMenuItem';
 
 
+export interface IMenu{
+    name: string,
+    iconName: string
+}
+
+const platformMenu: IMenu[] = [
+    { name: "Home", iconName: "house2" },
+    { name: "Publications", iconName: "publications" },
+    { name: "People", iconName: "people" },
+    { name: "Entities", iconName: "entities2" },
+    { name: "Administration", iconName: "administration" }
+]; 
+
+export const workspaceMenu: IMenu[] = [
+    { name: "Client Contract", iconName: "house2" },
+    { name: "Supplier Contract", iconName: "publications" },
+    { name: "Corporate", iconName: "people" },
+    { name: "Group Norms", iconName: "entities2" },
+    { name: "Real Estate Contracts", iconName: "administration" }
+];
+
 export const ExpandedMenu: FC = () =>{
 
     const photosState: PhotosContent[] = useSelector<RootState, PhotosContent[]>((state: RootState)=> state.photos.photos)
@@ -15,22 +36,6 @@ export const ExpandedMenu: FC = () =>{
 
     let platformMenuFiltered: any;
     let workspaceMenuFiltered: any;
-
-    const platformMenu: any[] = [
-        { name: "Home", iconName: "house2" },
-        { name: "Publications", iconName: "publications" },
-        { name: "People", iconName: "people" },
-        { name: "Entities", iconName: "entities2" },
-        { name: "Administration", iconName: "administration" }
-    ]; 
-
-    const workspaceMenu: any[] = [
-        { name: "Client Contract", iconName: "house2" },
-        { name: "Supplier Contract", iconName: "publications" },
-        { name: "Corporate", iconName: "people" },
-        { name: "Group Norms", iconName: "entities2" },
-        { name: "Real Estate Contracts", iconName: "administration" }
-    ];
 
     const [publicationsElements, setPublicationsElements] = useState([]); 
     const [workspaceElements, setWorkspaceElements] = useState([]); 

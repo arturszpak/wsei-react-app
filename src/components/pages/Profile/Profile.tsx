@@ -266,8 +266,12 @@ const Profile = () => {
                     <h3 className="profile__userInformationHeader">Internal correspondants</h3>
                     <div className="profile__correspondantInformationWrapper">
                         <div className="profile__correspondantInformation">
-                            <img src="" alt="avatar" className="profile__correspondantAvatar" />
-                            <p className="profile__correspondantName">John Doe</p>
+                            {
+                                photosState.slice(0,1).map(photo => <img src={photo.thumbnailUrl} alt="avatar" className="profile__correspondantAvatar"/>)
+                            }
+                             {usersState.slice(0,1).map(user => (
+                                <p className="profile__correspondantName">{user.name}</p>
+                            ))}
                             <p className="profile__correspondantActionBtn">
                                 <i className="far fa-comment"></i>
                                 Message
@@ -278,8 +282,12 @@ const Profile = () => {
                             </p>
                         </div>
                         <div className="profile__correspondantInformation">
-                            <img src="" alt="avatar" className="profile__correspondantAvatar" />
-                            <p className="profile__correspondantName">John Doe</p>
+                            {
+                                photosState.slice(0,1).map(photo => <img src={photo.thumbnailUrl} alt="avatar" className="profile__correspondantAvatar"/>)
+                            }
+                            {usersState.slice(0,1).map(user => (
+                                <p className="profile__correspondantName">{user.name}</p>
+                            ))}
                             <p className="profile__correspondantActionBtn">
                                 <i className="far fa-comment"></i>
                                 Message

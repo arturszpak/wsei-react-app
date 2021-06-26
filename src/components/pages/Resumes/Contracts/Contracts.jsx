@@ -1,7 +1,7 @@
 import './Contracts.scss';
 
 const Contracts = ({ posts, filter, users, photos }) => {
-
+    
     return (
         <ul className="pagination-number-list">
 

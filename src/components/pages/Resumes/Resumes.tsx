@@ -11,6 +11,7 @@ const Resumes = () => {
     const usersStore = useSelector((state: RootState)=> state.users.users);
     const postsStore = useSelector((state: RootState)=> state.comments.comments);
     const photosStore = useSelector((state: RootState)=> state.photos.photos);
+
     
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -30,6 +31,7 @@ const Resumes = () => {
         setCurrentPage(pageNumber)
     }
 
+
     return (
         <div className="resumes">
             <div className="resumes__header">
@@ -44,8 +46,8 @@ const Resumes = () => {
                     />
 
                     <select name="followed" id="followed">
-                        <option value="enable">follow</option>
-                        <option value="disable">no follow</option>
+                        <option value="ALL">All</option>
+                        <option value="MY">My posts</option>
                     </select>
                 </div>
 

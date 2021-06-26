@@ -3,7 +3,6 @@ import SingleEntity from './SingleEntity/SingleEntity'
 import { entityData } from './EntitiesData'
 import { useState } from 'react'
 import EntityFilter from './EntityFilter/EntityFilter'; 
-import IEntityProps from './IEntityProps';
 
 const Entities = () => {
 
