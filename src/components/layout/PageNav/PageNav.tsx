@@ -3,6 +3,7 @@ import './PageNav.scss';
 import SearchBar from './../SearchBar/SearchBar';
 import NotificationPanel from './../NotificationPanel/NotificationPanel';
 import {ExpandedMenu} from './..//ExpandedMenu/ExpandedMenu';
+import { ExpandedMenuItem } from '../ExpandedMenu/ExpandedMenuItem/ExpandedMenuItem';
 import useDropdown from 'react-dropdown-hook';
 
 function PageNav(){

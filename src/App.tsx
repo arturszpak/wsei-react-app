@@ -5,19 +5,30 @@ import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Entities from './components/pages/Entities/Entities';
 import Workspace from './components/pages/Workspace/Workspace';
-import PublicationsContainer from './components/pages/PublicationsContainer/PublicationsContainer';
 import Profile from './components/pages/Profile/Profile';
 import NotFound from './components/common/NotFound/NotFound';
+import { GetUsers } from './redux/actions/usersActions';
+import { GetComments } from './redux/actions/commentsActions';
+import { GetPhotos } from './redux/actions/photosActions';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(GetUsers());
+    dispatch(GetComments());
+    dispatch(GetPhotos());
+}, [])
 
   return (
     <Router>
       <div className="app">
-        <PageNav />
+        <PageNav/>
         <div className="wrapper">
-          <SideMenu className="sideMenu" />
+          <SideMenu />
           <Switch>
             <Route path="/" exact>
               <MainPage />
@@ -31,18 +42,9 @@ function App() {
             <Route path="/Workspace" exact>
               <Workspace />
             </Route>
-            <Route path="/Publications" exact>
-              <PublicationsContainer />
-            </Route>
             <Route path="/Profile" exact>
               <Profile />
             </Route>
-            {/* <Route path="/People" exact>
-              <NotFound />
-            </Route>
-            <Route path="/Administration" exact>
-              <NotFound />
-            </Route> */}
             <Route path="/*" exact>
               <NotFound />
             </Route>

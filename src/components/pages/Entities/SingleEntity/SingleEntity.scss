@@ -10,7 +10,8 @@ $blue: rgb(19, 19, 155);
   margin: 0.5rem;
 
   &__imgContainer {
-    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
   }
 
   &__img {

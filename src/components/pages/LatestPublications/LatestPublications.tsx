@@ -1,5 +1,6 @@
 import Publication from './Publication/Publication';
 import './LatestPublications.scss';
+import { Link } from 'react-router-dom';
 
 const LatestPublications = () => {
     return(
@@ -11,7 +12,9 @@ const LatestPublications = () => {
             <Publication />
             <Publication />
             <div className="publications__linkWrapper">
-                <a href="#" className="publications__link">See more publications</a>
+                <Link to="/Publications" className="publications__link">
+                    See more publications
+                </Link>
             </div>
             
         </div>

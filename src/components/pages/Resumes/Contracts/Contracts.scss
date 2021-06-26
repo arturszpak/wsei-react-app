@@ -17,9 +17,19 @@
 
   &__info {
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
     color: rgb(170, 170, 170);
   }
   &__info * {
     margin-right: 2rem;
+  }
+  &__userAvatar {
+    max-width: 35px;
+    max-height: 35px;
+  }
+
+  &__type {
+    margin-left: 1rem;
   }
 }

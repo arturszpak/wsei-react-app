@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Contracts from './Contracts/Contracts';
 import Pagination from './Pagination/Pagination';
 import './Resumes.scss';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/reducers';
 
 
 const Resumes = () => {
 
+    const usersStore = useSelector((state: RootState)=> state.users.users);
+    const postsStore = useSelector((state: RootState)=> state.comments.comments);
+    const photosStore = useSelector((state: RootState)=> state.photos.photos);
+    
     const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
     const [filter, setFilter] = useState('');
-
+    
     useEffect(() => {
-        const fetchPosts = async () => {
-            setLoading(true);
-            const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-            const resData: object[] = res.data;
-            setPosts(resData);
-            setLoading(false);
-        }
-
-        fetchPosts();
+        setPosts(postsStore)
     }, [])
-
+ 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
@@ -55,7 +51,7 @@ const Resumes = () => {
 
             </div>
             <div className="resumes__wrapper">
-                <Contracts posts={currentPosts} loading={loading} filter={filter} />
+                <Contracts posts={currentPosts} filter={filter} users={usersStore} photos={photosStore} />
                 <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}></Pagination>
             </div>
 

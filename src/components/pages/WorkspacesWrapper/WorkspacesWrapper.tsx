@@ -18,14 +18,10 @@ const WorkspacesWrapper = () => {
                 <SwiperSlide><WorkspacePreview /></SwiperSlide>
                 <SwiperSlide><WorkspacePreview /></SwiperSlide>
                 <SwiperSlide><WorkspacePreview /></SwiperSlide>
+                <SwiperSlide><WorkspacePreview /></SwiperSlide>
+                <SwiperSlide><WorkspacePreview /></SwiperSlide>
             </Swiper>
-                {/* <div className="workspacesWrapper__sliderInner">
-                    <WorkspacePreview />
-                    <WorkspacePreview />
-                    <WorkspacePreview />
-                    
-                </div> */}
-            </div>
+        </div>
     );
 };
 

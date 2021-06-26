@@ -1,26 +1,30 @@
 import './Contracts.scss';
 
-const Contracts = ({ posts, loading, filter }) => {
-    if (loading) return <h2>Loading...</h2>
+const Contracts = ({ posts, filter, users, photos }) => {
 
     return (
         <ul className="pagination-number-list">
 
             {posts.filter(val => {
-                if (filter == "")
+                if (filter === "")
                     return val
-                else if (val.title.toLowerCase().includes(filter.toLowerCase())) {
+                else if (val.name.toLowerCase().includes(filter.toLowerCase())) {
                     return val;
                 }
-            }).map((post) => (
-                <li className="pagination-number-list-item" key={post.title}>
+                return null;
+            }).map((post, i) => (
+                <li className="pagination-number-list-item" key={post.name}>
                     <div className="contract">
-                        <h3 className="contract__header">{post.title}</h3>
+                        <h3 className="contract__header">{post.name}</h3>
                         <p className="contract__paragraph">{post.body}</p>
                         <div className="contract__info">
-                            <span>Subsid. corp</span>
-                            <span>Corporate</span>
-                            <p>Updated 3 days ago by John Doe</p>
+                            <img src={ photos[i>9 ? 9 : i].thumbnailUrl } alt="avatar" className="contract__userAvatar" />
+                            {
+                                users[i> 9 ? 9 : i].name
+                            }
+
+                            <span className="contract__type">Corporate</span>
+                            <p>Updated 3 days ago by {users[i > 9 ? 9 : i].name}</p>
                         </div>
                     </div>
                 </li>

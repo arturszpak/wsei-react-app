@@ -1,10 +1,17 @@
 import React, {FC, useState, useEffect} from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { PhotosContent } from '../../../redux/actions/photosActionsTypes';
+import { UsersContent } from '../../../redux/actions/userActionTypes';
+import { RootState } from '../../../redux/reducers';
 import './ExpandedMenu.scss';
 import {ExpandedMenuItem} from './ExpandedMenuItem/ExpandedMenuItem';
 
 
 export const ExpandedMenu: FC = () =>{
+
+    const photosState: PhotosContent[] = useSelector<RootState, PhotosContent[]>((state: RootState)=> state.photos.photos)
+    const usersState: UsersContent[] = useSelector<RootState, UsersContent[]>((state: RootState)=> state.users.users)
 
     let platformMenuFiltered: any;
     let workspaceMenuFiltered: any;
@@ -35,7 +42,7 @@ export const ExpandedMenu: FC = () =>{
     const updateData = (e?: any) =>{
         let inputValue: string;
 
-        if(e == undefined)
+        if(e === undefined)
             inputValue = "";
         else inputValue = e.target.value.toLowerCase();
 
@@ -85,13 +92,15 @@ export const ExpandedMenu: FC = () =>{
                 <ul className="expandedMenu__menuList">
                     <div className="expandedMenu__account">
                         <div className="expandedMenu__account__avatar-wrapper">
-                            <img 
-                            src="https://blog.przenosne.pl/wp-content/uploads/2016/12/Linux-Avatar.png" 
-                            alt="user-avatar"/>
+                            {
+                                photosState.slice(0,1).map(photo => <img src={photo.thumbnailUrl} alt="user-avatar"/>)
+                            }
                         </div>
                         <div>
                             <span className="expandedMenu__account__name">
-                                Hilberta Zuckerberg
+                            {usersState.slice(0,1).map(user => (
+                                user.name || "John Doe"
+                            ))}
                             </span>
                             <Link to={`/Profile`} className="expandedMenu__account__link">
                                 See Profile

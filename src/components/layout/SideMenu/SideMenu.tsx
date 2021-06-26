@@ -1,54 +1,16 @@
-import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './SideMenu.scss';
+import ProfilePreview from './ProfilePreview/ProfilePreview';
 
+const SideMenu = () =>{
 
-interface IUserData{
-    userName: string,
-    userAvatar: string,
-    userJobTitle: string,
-    userCompany: string,
-}
-
-interface S{
-    userData: IUserData
-}
-
-class SideMenu extends Component<any, S> {
-
-    constructor(props: any){
-        super(props);
-        this.getUsers();
-        this.state = {userData: null}
-    }
-
-  
-    getUsers(){
-        const randomizeUser: number = Math.floor(Math.random() *10 +1);
-        fetch(`https://jsonplaceholder.typicode.com/users/${randomizeUser}`).then((d) => d.json()).then(data => {
-        const userData = {
-            userName: data.name,
-            userAvatar: "https://www.assyst.de/cms/upload/sub/digitalisierung/18-F.jpg",
-            userJobTitle: "manager",
-            userCompany: data.company.name,
-        }
-        this.setState({userData});
-      });
-    
-    }
-
-    render(){
-        const userData= this.state.userData;
-        return(
-            <div>
+    return(
+        <>
+            <div className="userProfileWrapper">
                 <div className="userProfile">
 
                 <Link to={`/Profile`} className="userProfile__credentials">
-                    <div className="userProfile__credentials__avatar">
-                        <img src={userData?.userAvatar} alt="user-avatar"/>
-                    </div>
-                    <h2 className="userProfile__credentials__name">{userData?.userName || "John Doe"}</h2>
-                    <p className="userProfile__credentials__job">{userData?.userJobTitle || "Job title"} - {userData?.userCompany || "Company"}</p>
+                    <ProfilePreview />
                 </Link>
 
 
@@ -96,9 +58,8 @@ class SideMenu extends Component<any, S> {
                     </Link>
                 </div>
             </div>
-            
-     )
-    }              
+            </>
+     )            
 }
 
 export default SideMenu;

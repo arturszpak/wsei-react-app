@@ -1,7 +1,13 @@
-import { userInfo } from 'os';
+import { useSelector } from 'react-redux';
+import { PhotosContent } from '../../../redux/actions/photosActionsTypes';
+import { UsersContent } from '../../../redux/actions/userActionTypes';
+import { RootState } from '../../../redux/reducers';
 import './Profile.scss'
 
 const Profile = () => {
+
+    const photosState: PhotosContent[] = useSelector<RootState, PhotosContent[]>((state: RootState)=> state.photos.photos)
+    const usersState: UsersContent[] = useSelector<RootState, UsersContent[]>((state: RootState)=> state.users.users)
 
     let isUserInfoEdited = false;
     let isContentEdited = false;
@@ -157,19 +163,26 @@ const Profile = () => {
                 </button>
             </div>
             <div className="profile__userGeneralInfo">
-                <div className="profile__userAvatar">
-                    <img src="" alt="aaa" />
-                </div>
-                <div className="profile__userInfo">
-                    <p className="profile__userInfo__name">Humberta Swift</p>
-                    <p className="profile__userInfo__company">Clifford Chance</p>
-                    <p className="profile__userInfo__city">New York</p>
-                    <p className="profile__userInfo__position">Partner</p>
-                </div>
-                <div className="profile__userContact">
-                    <p className="profile__userContact__mail">humbertaswift@gmail.com</p>
-                    <p className="profile__userContact__mobile">+33 (0)6 12 34 56 78</p>
-                </div>
+                {usersState.slice(0,1).map(user => (
+                    <>
+                        <div className="profile__userAvatar">
+                            {
+                                photosState.slice(0,1).map(photo => <img src={photo.thumbnailUrl} alt="user-avatar"/>)
+                            }
+                        </div>
+                        <div className="profile__userInfo">
+                            <p className="profile__userInfo__name">{user.name}</p>
+                            <p className="profile__userInfo__company">{user.company.name}</p>
+                            <p className="profile__userInfo__city">{user.address.city}</p>
+                            <p className="profile__userInfo__position">{user.username}</p>
+                        </div>
+                        <div className="profile__userContact">
+                            <p className="profile__userContact__mail">{user.email}</p>
+                            <p className="profile__userContact__mobile">{user.phone}</p>
+                        </div>
+                    </>
+                ))}
+               
                 <button className="profile__userInfo__editBtn editBtn" id="editUserInfoBtn" onClick={() => editInfo("userInfo")}>
                     <i className="fas fa-pencil-alt"></i>
                 </button>
