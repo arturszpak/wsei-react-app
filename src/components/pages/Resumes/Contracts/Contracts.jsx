@@ -18,7 +18,7 @@ const Contracts = ({ posts, filter, users, photos }) => {
                         <h3 className="contract__header">{post.name}</h3>
                         <p className="contract__paragraph">{post.body}</p>
                         <div className="contract__info">
-                            <img src={ photos[i>9 ? 9 : i].thumbnailUrl } alt="avatar" className="contract__userAvatar" />
+                            <img src={ photos[i>9 ? 9 : i]?.thumbnailUrl } alt="avatar" className="contract__userAvatar" />
                             {
                                 users[i> 9 ? 9 : i].name
                             }

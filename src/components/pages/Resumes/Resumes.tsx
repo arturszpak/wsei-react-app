@@ -21,6 +21,10 @@ const Resumes = () => {
     useEffect(() => {
         setPosts(postsStore)
     }, [])
+
+    useEffect(() => {
+        setPosts(postsStore)
+    }, [postsStore])
  
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
