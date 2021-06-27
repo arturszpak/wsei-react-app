@@ -116,7 +116,7 @@ export const ExpandedMenu: FC = () =>{
                     <ExpandedMenuItem name="Settings" iconName="settings" />
                     <div className="expandedMenu__logout">
                         <Link to={`/Logout`} className="expandedMenu__logout__link">
-                            <img src="./assets/images/icons/logout.png" alt="logout" className="expandedMenu__logout__img"/>
+                            <img src="/assets/images/icons/logout.png" alt="logout" className="expandedMenu__logout__img"/>
                             <span className="expandedMenu__logout__text">Logout</span>
                         </Link>
                     </div>

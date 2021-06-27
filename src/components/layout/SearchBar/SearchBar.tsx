@@ -7,7 +7,7 @@ function SearchBar(){
         <>
         <div className="searchBar mainNav__element__searchBar">
             <input type="text" className="searchBar__input" placeholder="Search Legalcluster..."/>
-            <img src="./assets/images/icons/search.png" alt="search-btn"/>
+            <img src="/assets/images/icons/search.png" alt="search-btn"/>
         </div>
         </>
     );

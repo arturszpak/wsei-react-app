@@ -11,7 +11,7 @@ export const ExpandedMenuItem: FC<Props> = ({ name, iconName }) => {
         <>
             <li className="expandedMenu__menuList__element">
                 <Link to={`/${name.replace(/ +/g, "")}`} className="expandedMenu__menuList__element__link">
-                    <img src={`./assets/images/icons/${iconName}.png`} alt={iconName}/>
+                    <img src={`/assets/images/icons/${iconName}.png`} alt={iconName}/>
                     <span className="expandedMenu__menuList__element__name">
                         {name}
                     </span>
